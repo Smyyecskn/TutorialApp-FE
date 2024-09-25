@@ -45,7 +45,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
                     className="me-2 text-warning"
                     data-toggle="modal"
                     data-target="#exampleModal"
-                    onClick={() => setEditData(item)}
+                    onClick={() => setEditData(item)} //item alabilmek için ustatee attık.
                   />
 
                   <AiFillDelete

@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 
 const EditTutorial = ({ getTutorials, editData }) => {
   const { id, title: oldTitle, description: oldDedscription } = editData;
-  const [title, setTitle] = useState(oldTitle);
-  const [description, setDescription] = useState(oldDedscription);
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     setTitle(oldTitle);
@@ -14,14 +15,13 @@ const EditTutorial = ({ getTutorials, editData }) => {
   const editTutorial = async (newTutorial) => {
     try {
       await axios.put(`${process.env.REACT_APP_URL}${id}/`, newTutorial);
-      getTutorials();
     } catch (error) {
       console.log(error);
     }
   };
-  // console.log("title", title);
+  // console.log("title", title); //yenı yazdıgımız değer
 
-  // console.log("oldTitle", oldTitle);
+  // console.log("oldTitle", oldTitle); //editDatadan gelen title degeri
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTutorial = { title, description };
