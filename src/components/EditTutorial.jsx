@@ -1,27 +1,30 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const EditTutorial = ({ getTutorials, editData }) => {
   const { id, title: oldTitle, description: oldDedscription } = editData;
   const [title, setTitle] = useState(oldTitle);
   const [description, setDescription] = useState(oldDedscription);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newTutorial = { title, description };
-    postTutorial(newTutorial);
-    setTitle("");
-    setDescription("");
-  };
+  useEffect(() => {
+    setTitle(oldTitle);
+    setDescription(oldDedscription);
+  }, [oldTitle, oldDedscription]);
 
-  const postTutorial = async (newTutorial) => {
+  const editTutorial = async (tutorial) => {
     try {
-      const res = axios.post(process.env.REACT_APP_URL, newTutorial);
-      axios.post(URL, newTutorial);
+      await axios.put(`${process.env.REACT_APP_URL}${id}/`, tutorial);
+      getTutorials();
     } catch (error) {
       console.log(error);
     }
+  };
+  console.log("title", title);
 
+  console.log("oldTitle", oldTitle);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    editTutorial({ title, description });
     getTutorials();
   };
 

@@ -19,7 +19,7 @@ const AddTutorial = ({ getTutorials }) => {
     try {
       // const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
       const res = axios.post(process.env.REACT_APP_URL, newTutorial);
-      axios.post(URL, newTutorial);
+      // axios.post(URL, newTutorial);
       // console.log(res);
     } catch (error) {
       console.log(error);

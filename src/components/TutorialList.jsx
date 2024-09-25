@@ -9,15 +9,14 @@ const TutorialList = ({ tutorials, getTutorials }) => {
 
   const deleteTutorial = async (id) => {
     try {
-      const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
-      await axios.delete(`${URL}${id}/`);
+      await axios.delete(`${process.env.REACT_APP_URL}${id}/`);
     } catch (error) {
       console.log(error);
     }
     getTutorials();
   };
 
-  console.log(editData);
+  // console.log(editData);
   return (
     <div className="container mt-4">
       <table className="table table-striped">
