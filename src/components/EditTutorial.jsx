@@ -11,9 +11,9 @@ const EditTutorial = ({ getTutorials, editData }) => {
     setDescription(oldDedscription);
   }, [oldTitle, oldDedscription]);
 
-  const editTutorial = async (tutorial) => {
+  const editTutorial = async (newTutorial) => {
     try {
-      await axios.put(`${process.env.REACT_APP_URL}${id}/`, tutorial);
+      await axios.put(`${process.env.REACT_APP_URL}${id}/`, newTutorial);
       getTutorials();
     } catch (error) {
       console.log(error);
@@ -24,7 +24,8 @@ const EditTutorial = ({ getTutorials, editData }) => {
   // console.log("oldTitle", oldTitle);
   const handleSubmit = (e) => {
     e.preventDefault();
-    editTutorial({ title, description });
+    const newTutorial = { title, description };
+    editTutorial(newTutorial);
     getTutorials();
   };
 
