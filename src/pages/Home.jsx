@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
-  console.log(process.env.REACT_APP_URL);
+  // console.log(process.env.REACT_APP_URL);
 
   const getTutorials = async () => {
-    // console.log("process.env.REACT_APP_URL", process.env.REACT_APP_URL);
     try {
       // const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
       // const res = await axios.get(URL);

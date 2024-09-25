@@ -19,9 +19,9 @@ const EditTutorial = ({ getTutorials, editData }) => {
       console.log(error);
     }
   };
-  console.log("title", title);
+  // console.log("title", title);
 
-  console.log("oldTitle", oldTitle);
+  // console.log("oldTitle", oldTitle);
   const handleSubmit = (e) => {
     e.preventDefault();
     editTutorial({ title, description });
@@ -47,8 +47,12 @@ const EditTutorial = ({ getTutorials, editData }) => {
               <button
                 type="button"
                 className="close"
-                data-dismiss="modal"
                 aria-label="Close"
+                data-dismiss="modal"
+                onClick={() => {
+                  setTitle("");
+                  setDescription("");
+                }}
               >
                 <span aria-hidden="true">×</span>
               </button>
