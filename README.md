@@ -1,6 +1,7 @@
 # API Base URLs
 
-## https://tutorial-api.fullstack.clarusway.com/
+## https://tutorials-appss.netlify.app/
+
 
 ### API ENDPOINTS
 
