@@ -13,6 +13,5 @@
 - DELETE `tutorials/:id/` remove Tutorial by id
 - DELETE `tutorials/` remove all Tutorials
 
-# Deployed Frontend
-
-## https://tutorial.fullstack.clarusway.com/
+ 
+ 
